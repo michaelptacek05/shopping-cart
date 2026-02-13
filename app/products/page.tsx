@@ -1,13 +1,14 @@
-'use client'
+import { getProducts } from "@/lib/api";
 
-import { usePathname } from "next/navigation"
+export default async function ProductsPage() {
+    const products = await getProducts();
 
-
-
-export default function ProductsPage() {
     return (
         <div>
-            <h1 className="text-2xl font-bold">{usePathname()}</h1>
+            <h1>Naše produkty</h1>
+            {products.map((product) => (
+                <li key={product.id}>{product.title}</li>
+            ))}
         </div>
-    )
+    );
 }
