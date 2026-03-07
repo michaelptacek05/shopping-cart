@@ -1,3 +1,5 @@
+
+
 import { Product } from "@/app/types/Product";
 
 export async function getProducts(): Promise<Product[]> {
