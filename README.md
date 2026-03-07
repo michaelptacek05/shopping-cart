@@ -5,6 +5,7 @@ This project was created according to the assignment from [The Odin Project](htt
 
 [Live project](https://shopping-cart-drab-one.vercel.app/)
 
+![Preview](public/preview.png)
 
 ## Techstack 
 * React
