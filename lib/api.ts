@@ -2,7 +2,9 @@ import { Product } from "@/app/types/Product";
 
 export async function getProducts(): Promise<Product[]> {
     try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("https://fakestoreapi.com/products", {
+            cache: "no-store"
+        });
 
         if (!response.ok) {
             console.warn(`FakeStoreAPI returned status: ${response.status}`);
