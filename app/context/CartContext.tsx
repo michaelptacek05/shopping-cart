@@ -34,8 +34,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
         });
     };
 
+    const removeFromCart = (productID: number) => {
+        setCart((prevCart) => {
+            return prevCart.filter((item) => item.id !== productID);
+        });
+    };
+
+    const updateQuantity = (productID: number, change: number) => {
+        setCart((prevCart) => {
+            const updateCart = prevCart.map((item) => {
+                if (item.id === productID) {
+                    return { ...item, quantity: item.quantity + change };
+                }            
+                return item;
+            });
+            return updateCart.filter((item) => item.quantity > 0);
+        });
+    };
     return (
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
             {children}
         </CartContext.Provider>
     );
