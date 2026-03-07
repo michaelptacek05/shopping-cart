@@ -16,14 +16,12 @@ export default function Navbar() {
                     </a>
                 </div>
                 <div className="flex items-center gap-8 md:gap-12">
-                    
-                    {/* Odkazy */}
                     <div className="flex items-center gap-6">
                         <a href="/" className="text-black font-bold text-sm tracking-wide">
-                            Home
+                            Domů
                         </a>
                         <a href="/products" className="text-black font-bold text-sm tracking-wide">
-                            Shop
+                            Nakupovat
                         </a>
                     </div>
 
